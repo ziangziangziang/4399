@@ -1,0 +1,22 @@
+{
+  "name": "4399-game-portal",
+  "version": "1.0.0",
+  "description": "GitHub Pages game portal with shared vendor libraries",
+  "type": "module",
+  "scripts": {
+    "dev": "vite site",
+    "build": "npm run catalog && npm run sync && npm run copy:assets && npm run importmap:prod && vite build site",
+    "catalog": "node scripts/build-catalog.mjs",
+    "sync": "node scripts/sync-builds.mjs",
+    "importmap": "node scripts/build-importmap.mjs",
+"importmap:prod": "node scripts/build-importmap.mjs prod",
+"copy:assets": "node scripts/copy-assets.mjs",
+    "vendor:fetch": "node scripts/vendor-fetch.mjs",
+    "preview": "vite preview site"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "typescript": "^5.3.0",
+    "js-yaml": "^4.1.0"
+  }
+}

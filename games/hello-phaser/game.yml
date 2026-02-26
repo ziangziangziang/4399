@@ -1,0 +1,10 @@
+slug: hello-phaser
+title: Hello Phaser
+description: Bouncing ball demo with Phaser 3
+tags: [demo, phaser, 2d]
+controls: ["Click: add ball", "Space: reset"]
+playPath: build/index.html
+thumbnail: assets/thumbnail.svg
+icon: assets/icon.svg
+libs:
+  phaser: "3.70.0"

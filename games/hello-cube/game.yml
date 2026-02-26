@@ -1,0 +1,10 @@
+slug: hello-cube
+title: Hello Cube
+description: Spinning 3D cube demo with Three.js
+tags: [demo, three, 3d]
+controls: ["Mouse drag: orbit", "Scroll: zoom"]
+playPath: build/index.html
+thumbnail: assets/thumbnail.svg
+icon: assets/icon.svg
+libs:
+  three: "0.160.0"

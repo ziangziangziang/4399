@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "three": "/4399/vendor/three@0.160.0/build/three.module.js",
+    "three/addons/": "/4399/vendor/three@0.160.0/examples/jsm/",
+    "phaser": "/4399/vendor/phaser@3.70.0/dist/phaser.js",
+    "lil-gui": "/4399/vendor/lil-gui@0.19.1/dist/lil-gui.esm.min.js",
+    "stats-js": "/4399/vendor/stats-js@1.0.1/dist/stats.module.js"
+  }
+}
