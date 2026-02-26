@@ -3,22 +3,59 @@
     "slug": "hello-cube",
     "title": "Hello Cube",
     "description": "Spinning 3D cube demo with Three.js",
-    "tags": "[demo, three, 3d]",
-    "controls": "[\"Mouse drag: orbit\", \"Scroll: zoom\"]",
+    "tags": [
+      "demo",
+      "three",
+      "3d"
+    ],
+    "controls": [
+      "Mouse drag: orbit",
+      "Scroll: zoom"
+    ],
     "playPath": "build/index.html",
     "thumbnail": "assets/thumbnail.svg",
     "icon": "assets/icon.svg",
-    "libs": []
+    "libs": {
+      "three": "0.160.0"
+    }
   },
   {
     "slug": "hello-phaser",
     "title": "Hello Phaser",
     "description": "Bouncing ball demo with Phaser 3",
-    "tags": "[demo, phaser, 2d]",
-    "controls": "[\"Click: add ball\", \"Space: reset\"]",
+    "tags": [
+      "demo",
+      "phaser",
+      "2d"
+    ],
+    "controls": [
+      "Click: add ball",
+      "Space: reset"
+    ],
     "playPath": "build/index.html",
     "thumbnail": "assets/thumbnail.svg",
     "icon": "assets/icon.svg",
-    "libs": []
+    "libs": {
+      "phaser": "3.70.0"
+    }
+  },
+  {
+    "slug": "snake",
+    "title": "Snake",
+    "description": "Classic snake game - eat food, grow longer, avoid walls and yourself",
+    "tags": [
+      "classic",
+      "arcade",
+      "phaser"
+    ],
+    "controls": [
+      "Arrow keys: Move snake"
+    ],
+    "playPath": "build/index.html",
+    "thumbnail": "assets/thumbnail.svg",
+    "icon": "assets/icon.svg",
+    "libs": {
+      "phaser": "3.70.0"
+    }
   }
 ]

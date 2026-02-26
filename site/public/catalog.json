@@ -38,5 +38,24 @@
     "libs": {
       "phaser": "3.70.0"
     }
+  },
+  {
+    "slug": "snake",
+    "title": "Snake",
+    "description": "Classic snake game - eat food, grow longer, avoid walls and yourself",
+    "tags": [
+      "classic",
+      "arcade",
+      "phaser"
+    ],
+    "controls": [
+      "Arrow keys: Move snake"
+    ],
+    "playPath": "build/index.html",
+    "thumbnail": "assets/thumbnail.svg",
+    "icon": "assets/icon.svg",
+    "libs": {
+      "phaser": "3.70.0"
+    }
   }
 ]
