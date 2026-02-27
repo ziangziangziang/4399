@@ -27,6 +27,8 @@ Build a classic 4399-style mini game portal with MPA architecture, PNG-first ass
 
 ### In Progress
 - ✅ Generated PNG assets for all 13 games (snake, tetris, gate-rush, sky-dominator, hello-cube, hello-phaser added)
+- ✅ Updated catalog.json with PNG paths
+- ✅ Assembled all games to site/public/play/
 
 ### Remaining
 - ⏳ Test all 13 games for playability via Chrome DevTools

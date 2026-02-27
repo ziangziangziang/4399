@@ -9,9 +9,6 @@ export interface Game {
   tags: string[];
   category: string;
   categoryZh: string;
-  rating: number;
-  views: number;
-  publishedAt: string;
 }
 
 let games: Game[] = [];
@@ -141,7 +138,7 @@ function renderRanking(): void {
   const rankingList = document.getElementById('ranking-list');
   if (!rankingList) return;
   
-  const sorted = [...games].sort((a, b) => b.views - a.views).slice(0, 10);
+  const sorted = [...games].slice(0, 10);
   
   rankingList.innerHTML = sorted.map((game, index) => `
     <a href="./game.html?slug=${game.slug}" class="ranking-item">
@@ -172,10 +169,6 @@ function renderGames(gameList: Game[]): void {
       <div class="game-info">
         <h3 class="game-title">${game.title}</h3>
         <p class="game-desc">${game.description}</p>
-        <div class="game-meta">
-          <span class="game-rating">★ ${game.rating.toFixed(1)}</span>
-          <span class="game-views">${game.views} ${t('game.views')}</span>
-        </div>
         <div class="game-tags">
           ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
         </div>
@@ -206,14 +199,6 @@ function setupFilters(): void {
       
       const filter = target.getAttribute('data-filter');
       let filteredGames = games;
-      
-      if (filter === 'popular') {
-        filteredGames = [...games].sort((a, b) => b.views - a.views);
-      } else if (filter === 'latest') {
-        filteredGames = [...games].sort((a, b) => 
-          new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-        );
-      }
       
       renderGames(filteredGames);
     });
@@ -321,11 +306,6 @@ function showGameModal(game: Game): void {
       </div>
       <div class="modal-body">
         <p class="modal-desc">${game.description}</p>
-        <div class="modal-meta">
-          <span class="modal-category">${game.categoryZh || game.category}</span>
-          <span class="modal-rating">★ ${game.rating.toFixed(1)}</span>
-          <span class="modal-views">${game.views} ${t('game.views')}</span>
-        </div>
         <div class="modal-tags">
           ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
         </div>
