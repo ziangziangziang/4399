@@ -13,12 +13,12 @@
     "category": "Classic",
     "categoryZh": "经典游戏",
     "playPath": "/",
-    "thumbnail": "play/tetris/assets/thumbnail.svg",
-    "icon": "play/tetris/assets/icon.svg",
+    "thumbnail": "play/tetris/assets/thumbnail.png",
+    "icon": "play/tetris/assets/icon.png",
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.450Z"
+    "publishedAt": "2026-02-27T15:46:42.793Z"
   },
   {
     "slug": "breakout",
@@ -39,7 +39,7 @@
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.445Z"
+    "publishedAt": "2026-02-27T15:46:42.787Z"
   },
   {
     "slug": "gate-rush",
@@ -56,12 +56,12 @@
     "category": "Action",
     "categoryZh": "动作游戏",
     "playPath": "build/index.html",
-    "thumbnail": "play/gate-rush/assets/thumbnail.svg",
-    "icon": "play/gate-rush/assets/icon.svg",
+    "thumbnail": "play/gate-rush/assets/thumbnail.png",
+    "icon": "play/gate-rush/assets/icon.png",
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.446Z"
+    "publishedAt": "2026-02-27T15:46:42.789Z"
   },
   {
     "slug": "gold-miner",
@@ -83,7 +83,7 @@
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.447Z"
+    "publishedAt": "2026-02-27T15:46:42.789Z"
   },
   {
     "slug": "hello-cube",
@@ -100,14 +100,14 @@
     "category": "demo",
     "categoryZh": "演示",
     "playPath": "build/index.html",
-    "thumbnail": "play/hello-cube/assets/thumbnail.svg",
-    "icon": "play/hello-cube/assets/icon.svg",
+    "thumbnail": "play/hello-cube/assets/thumbnail.png",
+    "icon": "play/hello-cube/assets/icon.png",
     "libs": {
       "three": "0.160.0"
     },
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.447Z"
+    "publishedAt": "2026-02-27T15:46:42.789Z"
   },
   {
     "slug": "hello-phaser",
@@ -124,14 +124,14 @@
     "category": "demo",
     "categoryZh": "演示",
     "playPath": "build/index.html",
-    "thumbnail": "play/hello-phaser/assets/thumbnail.svg",
-    "icon": "play/hello-phaser/assets/icon.svg",
+    "thumbnail": "play/hello-phaser/assets/thumbnail.png",
+    "icon": "play/hello-phaser/assets/icon.png",
     "libs": {
       "phaser": "3.70.0"
     },
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.448Z"
+    "publishedAt": "2026-02-27T15:46:42.789Z"
   },
   {
     "slug": "ice-fire-boy",
@@ -149,12 +149,12 @@
     "category": "puzzle",
     "categoryZh": "puzzle",
     "playPath": "play/ice-fire-boy/index.html",
-    "thumbnail": "play/ice-fire-boy/assets/thumbnail.svg",
-    "icon": "play/ice-fire-boy/null",
+    "thumbnail": "play/ice-fire-boy/assets/thumbnail.png",
+    "icon": "play/ice-fire-boy/assets/icon.png",
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.448Z"
+    "publishedAt": "2026-02-27T15:46:42.790Z"
   },
   {
     "slug": "memory-match",
@@ -175,7 +175,7 @@
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.449Z"
+    "publishedAt": "2026-02-27T15:46:42.790Z"
   },
   {
     "slug": "pacman",
@@ -196,7 +196,7 @@
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.449Z"
+    "publishedAt": "2026-02-27T15:46:42.791Z"
   },
   {
     "slug": "sky-dominator",
@@ -215,12 +215,12 @@
     "category": "Action",
     "categoryZh": "Action",
     "playPath": "play/sky-dominator/index.html",
-    "thumbnail": "play/sky-dominator/assets/thumbnail.svg",
-    "icon": "play/sky-dominator/assets/icon.svg",
+    "thumbnail": "play/sky-dominator/assets/thumbnail.png",
+    "icon": "play/sky-dominator/assets/icon.png",
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.449Z"
+    "publishedAt": "2026-02-27T15:46:42.791Z"
   },
   {
     "slug": "snake",
@@ -236,12 +236,12 @@
     "category": "Classic",
     "categoryZh": "经典游戏",
     "playPath": "build/index.html",
-    "thumbnail": "play/snake/assets/thumbnail.svg",
-    "icon": "play/snake/assets/icon.svg",
+    "thumbnail": "play/snake/assets/thumbnail.png",
+    "icon": "play/snake/assets/icon.png",
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.449Z"
+    "publishedAt": "2026-02-27T15:46:42.791Z"
   },
   {
     "slug": "snake2",
@@ -257,12 +257,12 @@
     "category": "Classic",
     "categoryZh": "经典游戏",
     "playPath": "/",
-    "thumbnail": "play/snake2/assets/thumbnail.svg",
-    "icon": "play/snake2/assets/icon.svg",
+    "thumbnail": "play/snake2/assets/thumbnail.png",
+    "icon": "play/snake2/assets/icon.png",
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.450Z"
+    "publishedAt": "2026-02-27T15:46:42.792Z"
   },
   {
     "slug": "tank-battle",
@@ -284,6 +284,6 @@
     "libs": {},
     "rating": 3.5,
     "views": 1000,
-    "publishedAt": "2026-02-27T14:54:42.450Z"
+    "publishedAt": "2026-02-27T15:46:42.792Z"
   }
 ]

@@ -11,6 +11,6 @@ tags:
 controls: "Arrow keys or WASD to control"
 controlsZh: "方向键或 WASD 控制"
 playPath: "/"
-thumbnail: "assets/thumbnail.svg"
-icon: "assets/icon.svg"
+thumbnail: "assets/thumbnail.png"
+icon: "assets/icon.png"
 image_prompt: "Game scene for # Snake Classic, vanilla style, colorful, engaging"

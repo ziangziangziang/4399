@@ -9,6 +9,6 @@ tags: [classic, arcade]
 controls: ["Arrow keys: Move snake"]
 controlsZh: ["方向键：移动蛇"]
 playPath: build/index.html
-thumbnail: assets/thumbnail.svg
-icon: assets/icon.svg
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
 image_prompt: A cute green cartoon snake eating a red apple, colorful game icon, 4399 style, vibrant colors, playful design, isolated on light background

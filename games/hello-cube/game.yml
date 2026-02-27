@@ -9,7 +9,7 @@ tags: [demo, three, 3d]
 controls: ["Mouse drag: orbit", "Scroll: zoom"]
 controlsZh: ["鼠标拖拽：旋转", "滚动：缩放"]
 playPath: build/index.html
-thumbnail: assets/thumbnail.svg
-icon: assets/icon.svg
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
 libs:
   three: "0.160.0"

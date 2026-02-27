@@ -9,7 +9,7 @@ categoryZh: 演示
 controls: ["Click: add ball", "Space: reset"]
 controlsZh: ["点击：添加球", "空格：重置"]
 playPath: build/index.html
-thumbnail: assets/thumbnail.svg
-icon: assets/icon.svg
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
 libs:
   phaser: "3.70.0"

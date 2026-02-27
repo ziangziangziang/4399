@@ -18,6 +18,6 @@ controls:
     - Mouse: Aim
     - Space: Shoot
     - ESC: Pause
-thumbnail: assets/thumbnail.svg
-icon: assets/icon.svg
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
 image_prompt: 3D isometric view of a futuristic fighter jet in mid-flight, sleek metallic blue and silver design with glowing engine trails, dynamic action pose, clean game UI with health bar and score display, minimalist style, vibrant colors, high quality game icon, 512x512px

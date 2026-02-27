@@ -49,13 +49,13 @@
       this.base = this.physics.add.image(512, 720, "base");
       this.base.setCollideWorldBounds(true);
       this.base.setDepth(5);
-      const cursorKeys = this.input.keyboard.createCursorKeys();
-      const spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-      if (!cursorKeys || !spaceKey) {
+      const keyboard = this.input.keyboard?.createCursorKeys();
+      const spaceKey = this.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+      if (!keyboard || !spaceKey) {
         console.error("Keyboard initialization failed");
         return;
       }
-      this.keys = cursorKeys;
+      this.keys = keyboard;
       this.keys.space = spaceKey;
       this.scoreText = this.add.text(16, 16, "Score: 0", {
         fontSize: "24px",
@@ -105,7 +105,7 @@
       const bullet = this.bullets.create(this.player.x, this.player.y, "bullet");
       bullet.setDisplaySize(10, 10);
       bullet.setDepth(11);
-      let velocity = Phaser.Math.Vector2.ZERO;
+      let velocity = new Phaser.Math.Vector2(0, -300);
       if (this.keys.up?.isDown)
         velocity = new Phaser.Math.Vector2(0, -300);
       else if (this.keys.down?.isDown)
@@ -165,10 +165,13 @@
         fontSize: "24px",
         color: "#000"
       }).setOrigin(0.5);
-      this.input.keyboard.once("keydown-SPACE", () => {
-        this.scene.restart();
-      });
-      if (this.enemySpawnTimer != null) {
+      const keyboard = this.input.keyboard;
+      if (keyboard) {
+        keyboard.once("keydown-SPACE", () => {
+          this.scene.restart();
+        });
+      }
+      if (this.enemySpawnTimer !== null) {
         this.enemySpawnTimer.remove();
       }
     }
@@ -188,33 +191,13 @@
         fontSize: "24px",
         color: "#000"
       }).setOrigin(0.5);
-      this.input.keyboard.once("keydown-SPACE", () => {
-        this.scene.restart();
-      });
-      if (this.enemySpawnTimer != null) {
-        this.enemySpawnTimer.remove();
+      const keyboard = this.input.keyboard;
+      if (keyboard) {
+        keyboard.once("keydown-SPACE", () => {
+          this.scene.restart();
+        });
       }
-    }
-    hitPlayer(enemy) {
-      enemy.destroy();
-      this.gameOver = true;
-      this.add.text(512, 384, "GAME OVER", {
-        fontSize: "48px",
-        color: "#ff0000",
-        fontStyle: "bold"
-      }).setOrigin(0.5);
-      this.add.text(512, 450, `Final Score: ${this.score}`, {
-        fontSize: "32px",
-        color: "#000"
-      }).setOrigin(0.5);
-      this.add.text(512, 500, "Press SPACE to restart", {
-        fontSize: "24px",
-        color: "#000"
-      }).setOrigin(0.5);
-      this.input.keyboard.once("keydown-SPACE", () => {
-        this.scene.restart();
-      });
-      if (this.enemySpawnTimer != null) {
+      if (this.enemySpawnTimer !== null) {
         this.enemySpawnTimer.remove();
       }
     }

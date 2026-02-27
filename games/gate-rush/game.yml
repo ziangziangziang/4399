@@ -9,6 +9,6 @@ tags: [action, runner, math]
 controls: ["A/D or Arrow keys: Move left/right"]
 controlsZh: ["A/D 或方向键：左右移动"]
 playPath: build/index.html
-thumbnail: assets/thumbnail.svg
-icon: assets/icon.svg
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
 image_prompt: A squad of soldiers running through colorful math gates, action game scene, 4399 style, vibrant colors, dynamic composition
