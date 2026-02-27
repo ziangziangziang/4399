@@ -1,0 +1,17 @@
+name:
+  zh: 记忆匹配
+  en: Memory Match
+slug: memory-match
+category: puzzle
+description:
+  zh: 记忆配对游戏，找出所有匹配的卡片
+  en: Memory matching game, find all matching cards
+controls:
+  - key: 鼠标点击
+    zh: 选择卡片
+    en: Select cards
+tags:
+  - puzzle
+  - memory
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>Gold Miner Icon</title></head>
+<body>
+<canvas id="c" width="512" height="512"></canvas>
+<script>
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+ctx.fillStyle = '#4CAF50';
+ctx.fillRect(0, 0, 512, 512);
+ctx.fillStyle = '#FFD700';
+ctx.beginPath();
+ctx.arc(256, 256, 120, 0, Math.PI * 2);
+ctx.fill();
+ctx.fillStyle = '#8B4513';
+ctx.fillRect(240, 200, 32, 150);
+ctx.fillStyle = '#FFD700';
+ctx.beginPath();
+ctx.ellipse(256, 380, 40, 30, 0, 0, Math.PI * 2);
+ctx.fill();
+ctx.fillStyle = '#000';
+ctx.font = 'bold 48px Arial';
+ctx.textAlign = 'center';
+ctx.fillText('黄金矿工', 256, 460);
+fetch('/download-file?path=' + encodeURIComponent(c.toDataURL('image/png')))
+  .then(r => r.blob()).then(b => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b);
+    a.download = 'thumbnail.png';
+    a.click();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+slug: tank-battle
+title: Tank Battle
+titleZh: 坦克大战
+category: Action
+categoryZh: 动作游戏
+description: Control your tank, destroy enemy tanks and protect your base in this classic battle game
+descriptionZh: 控制你的坦克，摧毁敌方坦克，保护基地，经典对战游戏
+tags: [action, strategy, multiplayer]
+controls: ["WASD: Move tank", "Space: Shoot cannon"]
+controlsZh: ["WASD: 移动坦克", "空格键：发射炮弹"]
+playPath: build/index.html
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
+image_prompt: Two classic tanks battling in a desert battlefield with explosions and smoke, one blue tank and one red tank, 4399 game icon style, intense action scene

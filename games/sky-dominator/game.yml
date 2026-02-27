@@ -1,0 +1,23 @@
+slug: sky-dominator
+title: Sky Dominator
+titleZh: 苍穹战机
+category: Action
+description:
+  zh: 3D 空战射击游戏！操控战机在广阔天空中战斗，击败敌人，收集能量，成为苍穹霸主。流畅的三维机动，多样化的敌人，刺激的战斗体验。
+  en: 3D aerial combat game! Pilot your fighter through vast skies, defeat enemies, collect power-ups, and dominate the heavens. Smooth 3D maneuvers, diverse enemies, exciting battles.
+controls:
+  zh:
+    - WASD / 方向键：前后左右移动
+    - Shift：加速
+    - 鼠标：瞄准
+    - 空格：射击
+    - ESC：暂停
+  en:
+    - WASD / Arrows: Move forward/back/left/right
+    - Shift: Boost
+    - Mouse: Aim
+    - Space: Shoot
+    - ESC: Pause
+thumbnail: assets/thumbnail.svg
+icon: assets/icon.svg
+image_prompt: 3D isometric view of a futuristic fighter jet in mid-flight, sleek metallic blue and silver design with glowing engine trails, dynamic action pose, clean game UI with health bar and score display, minimalist style, vibrant colors, high quality game icon, 512x512px

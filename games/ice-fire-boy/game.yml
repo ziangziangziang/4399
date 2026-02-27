@@ -1,0 +1,16 @@
+name:
+  zh: 冰火人
+  en: Ice Fire Boy
+slug: ice-fire-boy
+version: 1.0.0
+description:
+  zh: 双人合作闯关游戏，需要同时控制冰火两个角色，解谜冒险
+  en: Two-player cooperative game, control ice and fire characters simultaneously
+category: puzzle
+tags:
+  - 双人游戏
+  - 合作
+  - 平台跳跃
+  - 解谜
+image: null
+icon: null

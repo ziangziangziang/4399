@@ -20,14 +20,17 @@ A classic **4399-style** mini game portal (nostalgia vibe), deployed on GitHub P
   - `build:site` → build portal to `site/dist`
   - `build` runs all
 
+## Test
+Always test the UX after development with chrome-dev mcp to make sure user-friendly.
+
 ## Language
 Default **Simplified Chinese**. If browser language starts with `en`, default to English. Always show `中文/EN` toggle (persist in localStorage). `game.yml` supports zh/en fields.
 
-## Icons
-SVG-first per game:
-- `games/<slug>/assets/thumbnail.svg`
-- `games/<slug>/assets/icon.svg`
-No `<script>`, no external images, self-contained, 512×512.
+## Icons (AI-Generated with Fallback)
+Accessibility-first approach:
+- `games/<slug>/assets/thumbnail.png` (AI-generated)
+- `games/<slug>/assets/icon.png` (AI-generated)
+- Optional `*.svg` for accessibility/performance if needed
 
 ## Project tracking
 `TODO.md` is the source of truth. Read it before work; update it after.

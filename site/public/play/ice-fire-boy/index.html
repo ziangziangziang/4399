@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冰火小人为双人闯关</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; }
+    body {
+      background: #0f0f1a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Courier New', monospace;
+    }
+    #game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      padding: 10px 20px;
+      color: #4ade80;
+    }
+    #controls-hint { font-size: 14px; color: #888; }
+    #game-wrapper { position: relative; }
+    #game-canvas {
+      display: block;
+      border: 2px solid #4ade80;
+      border-radius: 4px;
+    }
+    #back-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #4ade80;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: monospace;
+      z-index: 10;
+    }
+    #back-btn:hover { background: #22c55e; }
+  </style>
+</head>
+<body>
+  <div id="game-header">
+    <div>冰火小人为双人闯关</div>
+    <div id="controls-hint">冰：WASD 移动 | 火：方向键移动 | 共同收集宝石到达门口</div>
+  </div>
+  <div id="game-wrapper">
+    <button id="back-btn">退出</button>
+    <canvas id="game-canvas"></canvas>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    document.getElementById('back-btn').addEventListener('click', () => {
+      if (window.opener) {
+        window.close();
+      } else {
+        window.location.href = '/';
+      }
+    });
+  </script>
+</body>
+</html>

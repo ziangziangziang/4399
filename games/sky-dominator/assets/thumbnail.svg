@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a20"/>
+      <stop offset="100%" style="stop-color:#1a1a40"/>
+    </linearGradient>
+    <linearGradient id="ship" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="800" fill="url(#bg)"/>
+  
+  <!-- Stars -->
+  <g fill="#ffffff">
+    <circle cx="100" cy="100" r="2"/>
+    <circle cx="200" cy="150" r="1.5"/>
+    <circle cx="300" cy="80" r="2"/>
+    <circle cx="400" cy="200" r="1"/>
+    <circle cx="500" cy="120" r="2"/>
+    <circle cx="600" cy="180" r="1.5"/>
+    <circle cx="700" cy="100" r="2"/>
+    <circle cx="150" cy="300" r="1.5"/>
+    <circle cx="250" cy="250" r="2"/>
+    <circle cx="350" cy="350" r="1"/>
+    <circle cx="450" cy="280" r="2"/>
+    <circle cx="550" cy="320" r="1.5"/>
+    <circle cx="650" cy="260" r="2"/>
+    <circle cx="120" cy="500" r="2"/>
+    <circle cx="220" cy="450" r="1.5"/>
+    <circle cx="320" cy="520" r="2"/>
+    <circle cx="420" cy="480" r="1"/>
+    <circle cx="520" cy="540" r="2"/>
+    <circle cx="620" cy="470" r="1.5"/>
+    <circle cx="720" cy="510" r="2"/>
+  </g>
+  
+  <!-- Player ship (blue) -->
+  <g transform="translate(400, 450)">
+    <!-- Main body -->
+    <polygon points="0,-30 8,10 0,8 -8,10" fill="url(#ship)"/>
+    <!-- Wings -->
+    <polygon points="-24,-5 24,-5 0,15" fill="#2980b9"/>
+    <!-- Engine glow -->
+    <circle cx="0" cy="12" r="6" fill="#00ffff"/>
+  </g>
+  
+  <!-- Enemy (red) -->
+  <g transform="translate(250, 300)">
+    <polygon points="0,-20 6,8 0,6 -6,8" fill="#e74c3c"/>
+    <polygon points="-16,-4 16,-4 0,10" fill="#c0392b"/>
+  </g>
+  
+  <!-- Enemy (orange) -->
+  <g transform="translate(550, 350)">
+    <polygon points="0,-18 5,7 0,5 -5,7" fill="#f39c12"/>
+    <polygon points="-12,-3 12,-3 0,9" fill="#d68910"/>
+  </g>
+  
+  <!-- Bullets (green) -->
+  <g fill="#00ff00">
+    <rect x="385" y="420" width="3" height="15" transform="rotate(-10 385 420)"/>
+    <rect x="415" y="425" width="3" height="15" transform="rotate(10 415 425)"/>
+  </g>
+  
+  <!-- Title text -->
+  <text x="400" y="680" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#3498db" text-anchor="middle">苍穹战机</text>
+  <text x="400" y="720" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">Sky Dominator</text>
+</svg>

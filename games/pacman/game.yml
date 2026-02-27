@@ -1,0 +1,17 @@
+name:
+  zh: 吃豆人
+  en: Pacman
+slug: pacman
+category: classic
+description:
+  zh: 经典吃豆人游戏，收集豆子躲避幽灵
+  en: Classic Pacman game, collect dots and avoid ghosts
+controls:
+  - key: 方向键
+    zh: 移动
+    en: Move
+tags:
+  - classic
+  - arcade
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png

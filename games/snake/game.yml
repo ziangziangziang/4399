@@ -1,10 +1,14 @@
 slug: snake
 title: Snake
+titleZh: 贪吃蛇
+category: Classic
+categoryZh: 经典游戏
 description: Classic snake game - eat food, grow longer, avoid walls and yourself
-tags: [classic, arcade, phaser]
+descriptionZh: 经典贪吃蛇游戏 - 吃食物，变长，避免撞墙或撞到自己
+tags: [classic, arcade]
 controls: ["Arrow keys: Move snake"]
+controlsZh: ["方向键：移动蛇"]
 playPath: build/index.html
 thumbnail: assets/thumbnail.svg
 icon: assets/icon.svg
-libs:
-  phaser: "3.70.0"
+image_prompt: A cute green cartoon snake eating a red apple, colorful game icon, 4399 style, vibrant colors, playful design, isolated on light background

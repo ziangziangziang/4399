@@ -1,8 +1,13 @@
 slug: hello-phaser
 title: Hello Phaser
+titleZh: 你好 Phaser
 description: Bouncing ball demo with Phaser 3
+descriptionZh: Phaser 3 弹球演示
 tags: [demo, phaser, 2d]
+category: demo
+categoryZh: 演示
 controls: ["Click: add ball", "Space: reset"]
+controlsZh: ["点击：添加球", "空格：重置"]
 playPath: build/index.html
 thumbnail: assets/thumbnail.svg
 icon: assets/icon.svg

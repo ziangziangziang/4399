@@ -26,7 +26,7 @@ This repo is 99% vibe coded. The ONLY writing made by myself is this section of 
 
 I did the following, one by one:
 1. Got the idea after running few benchmarks, more precisely, the "create a flight simulator" one-shot test.
-2. Asked GPT 5.2 Thinking for an `AGENTS.md` and an `prompts/BOOTSTRAP_PORTAL.md`. Copied over to the files.
+2. Asked GPT 5.2 Thinking for an `AGENTS.md`, `.opencode/skills/frontend-skill/SKILL.md `, and an `prompts/BOOTSTRAP_PORTAL.md`. Copied over to the files.
 3. Asked Opencode to start working, with qwen3.5-122b (`unsloth/Qwen3.5-122B-A10B-GGUF:UD-Q4_K_XL`).
 
 ## Adding a New Game

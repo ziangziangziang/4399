@@ -1,0 +1,16 @@
+{
+  "name": "ice-fire-boy",
+  "version": "1.0.0",
+  "description": "冰火人双人合作游戏",
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --outfile=build/main.js --format=esm --sourcemap --target=es2015",
+    "dev": "npm run build -- --watch"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}

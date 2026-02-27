@@ -1,22 +1,23 @@
 {
   "name": "4399-game-portal",
   "version": "1.0.0",
-  "description": "GitHub Pages game portal with shared vendor libraries",
+  "description": "4399-style mini game portal (npm-only bundling, MPA architecture)",
   "type": "module",
   "scripts": {
     "dev": "vite site",
-    "build": "npm run catalog && npm run sync && npm run copy:assets && npm run importmap:prod && cd site && npx vite build --config ../vite.config.js --mode production",
+    "build:games": "node scripts/build-games.mjs",
     "catalog": "node scripts/build-catalog.mjs",
-    "sync": "node scripts/sync-builds.mjs",
-    "importmap": "node scripts/build-importmap.mjs",
-"importmap:prod": "node scripts/build-importmap.mjs prod",
-"copy:assets": "node scripts/copy-assets.mjs",
-    "vendor:fetch": "node scripts/vendor-fetch.mjs",
-    "preview": "vite preview site"
+    "assemble": "node scripts/assemble.mjs",
+    "build:site": "vite build --config vite.config.js",
+    "build": "npm run build:games && npm run catalog && npm run assemble && npm run build:site",
+    "preview": "vite preview site/dist"
   },
   "devDependencies": {
     "vite": "^5.0.0",
     "typescript": "^5.3.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "esbuild": "^0.20.0",
+    "three": "^0.160.0",
+    "phaser": "^3.70.0"
   }
 }

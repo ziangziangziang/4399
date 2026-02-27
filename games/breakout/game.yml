@@ -1,0 +1,17 @@
+name:
+  zh: 打砖块
+  en: Breakout
+slug: breakout
+category: classic
+description:
+  zh: 经典打砖块游戏，控制挡板击碎所有砖块
+  en: Classic Breakout game, control paddle to break all bricks
+controls:
+  - key: 鼠标/左右箭头
+    zh: 移动挡板
+    en: Move paddle
+tags:
+  - classic
+  - arcade
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png

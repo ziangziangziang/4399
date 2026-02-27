@@ -1,0 +1,14 @@
+slug: gate-rush
+title: Gate Rush
+titleZh:  gate 冲刺
+category: Action
+categoryZh: 动作游戏
+description: Lead your squad through math gates and defeat zombies in this fast-paced runner
+descriptionZh: 带领你的小队穿过数学门并击败僵尸的快节奏跑酷游戏
+tags: [action, runner, math]
+controls: ["A/D or Arrow keys: Move left/right"]
+controlsZh: ["A/D 或方向键：左右移动"]
+playPath: build/index.html
+thumbnail: assets/thumbnail.svg
+icon: assets/icon.svg
+image_prompt: A squad of soldiers running through colorful math gates, action game scene, 4399 style, vibrant colors, dynamic composition

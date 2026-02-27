@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>苍穹战机 - Sky Dominator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      overflow: hidden;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    #game-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    #ui-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .hud {
+      position: absolute;
+      padding: 10px 15px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+      pointer-events: auto;
+    }
+    #score-display {
+      top: 10px;
+      left: 10px;
+    }
+    #health-display {
+      top: 10px;
+      right: 10px;
+    }
+    #health-bar {
+      width: 150px;
+      height: 10px;
+      background: #333;
+      border-radius: 3px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+    #health-fill {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #ff4444, #ff8844);
+      transition: width 0.2s;
+    }
+    #pause-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      pointer-events: auto;
+      display: none;
+    }
+    #pause-screen.visible {
+      display: flex;
+    }
+    #pause-screen h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #4CAF50;
+    }
+    #pause-screen p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    #pause-screen button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #pause-screen button:hover {
+      background: #45a049;
+    }
+    #game-over {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      pointer-events: auto;
+      display: none;
+    }
+    #game-over.visible {
+      display: flex;
+    }
+    #game-over h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      color: #ff4444;
+    }
+    #game-over .final-score {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    #game-over button {
+      padding: 15px 40px;
+      font-size: 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #game-over button:hover {
+      background: #45a049;
+    }
+    #start-screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      pointer-events: auto;
+    }
+    #start-screen h1 {
+      font-size: 64px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 20px #4CAF50;
+    }
+    #start-screen h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    #start-screen .controls-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    #start-screen .controls-info p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    #start-screen button {
+      padding: 18px 50px;
+      font-size: 24px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+      transition: all 0.2s;
+    }
+    #start-screen button:hover {
+      background: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6);
+    }
+    #wave-display {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
+  
+  <div id="ui-layer">
+    <div id="score-display" class="hud">
+      <strong>分数:</strong> <span id="score">0</span>
+    </div>
+    
+    <div id="health-display" class="hud">
+      <strong>生命值</strong>
+      <div id="health-bar">
+        <div id="health-fill"></div>
+      </div>
+    </div>
+    
+    <div id="wave-display" class="hud">
+      波次：<span id="wave">1</span>
+    </div>
+    
+    <div id="pause-screen">
+      <h1>暂停</h1>
+      <p>按 ESC 继续游戏</p>
+      <button onclick="game.resume()">继续</button>
+    </div>
+    
+    <div id="game-over">
+      <h1>游戏结束</h1>
+      <div class="final-score">最终分数：<span id="final-score">0</span></div>
+      <button onclick="game.restart()">重新开始</button>
+    </div>
+    
+    <div id="start-screen">
+      <h1>苍穹战机</h1>
+      <h2>Sky Dominator</h2>
+      <div class="controls-info">
+        <p><strong>移动:</strong> WASD / 方向键</p>
+        <p><strong>加速:</strong> Shift</p>
+        <p><strong>瞄准:</strong> 鼠标</p>
+        <p><strong>射击:</strong> 空格键</p>
+        <p><strong>暂停:</strong> ESC</p>
+      </div>
+      <button onclick="game.start()">开始游戏</button>
+    </div>
+  </div>
+  
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

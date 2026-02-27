@@ -1,8 +1,13 @@
 slug: hello-cube
 title: Hello Cube
+titleZh: 你好方块
+category: demo
+categoryZh: 演示
 description: Spinning 3D cube demo with Three.js
+descriptionZh: 使用 Three.js 的 3D 方块演示
 tags: [demo, three, 3d]
 controls: ["Mouse drag: orbit", "Scroll: zoom"]
+controlsZh: ["鼠标拖拽：旋转", "滚动：缩放"]
 playPath: build/index.html
 thumbnail: assets/thumbnail.svg
 icon: assets/icon.svg

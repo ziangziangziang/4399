@@ -12,12 +12,9 @@ const OUTPUT_FILE = join(ROOT_DIR, 'site', 'public', 'catalog.json');
 
 function parseYAML(content) {
   const result = {};
-  let currentKey = null;
-  let inList = false;
-  let listKey = null;
-  let indentStack = [];
-  
   const lines = content.split('\n');
+  const keyStack = [{ obj: result, indent: -1, key: null }];
+  
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
     const trimmed = line.trim();
@@ -25,18 +22,16 @@ function parseYAML(content) {
     
     const indent = line.match(/^\s*/)?.[0]?.length || 0;
     
-    const match = trimmed.match(/^([a-zA-Z_]+):\s*(.*)$/);
+    // Pop stack until we find parent with smaller indent
+    while (keyStack.length > 1 && keyStack[keyStack.length - 1].indent >= indent) {
+      keyStack.pop();
+    }
+    
+    const currentObj = keyStack[keyStack.length - 1].obj;
+    
+    const match = trimmed.match(/^([a-zA-Z_][a-zA-Z0-9_]*):\s*(.*)$/);
     if (match) {
       const [, key, value] = match;
-      
-      // If we're inside a nested object, add to it instead of creating a new top-level key
-      if (currentKey && result[currentKey] && typeof result[currentKey] === 'object' && !Array.isArray(result[currentKey])) {
-        result[currentKey][key] = value === '' || value === '[]' ? {} : parseValue(value);
-        continue;
-      }
-      
-      currentKey = key;
-      inList = false;
       
       if (value === '' || value === '[]') {
         // Check if next line is indented (nested object or list)
@@ -56,37 +51,36 @@ function parseYAML(content) {
         }
         
         if (isNested) {
-          result[key] = isList ? [] : {};
-          currentKey = key;
-          listKey = isList ? key : null;
-          inList = isList;
+          currentObj[key] = isList ? [] : {};
+          keyStack.push({ obj: currentObj[key], indent, key });
         } else {
-          result[key] = [];
-          listKey = key;
-          inList = true;
+          currentObj[key] = [];
         }
       } else {
-        result[key] = parseValue(value);
-        listKey = null;
+        currentObj[key] = parseValue(value);
       }
       continue;
     }
     
-    if (inList && trimmed.startsWith('- ')) {
+    // List item
+    if (trimmed.startsWith('- ')) {
       const item = trimmed.slice(2).trim();
-      if (Array.isArray(result[listKey])) {
-        result[listKey].push(parseValue(item));
+      const parent = keyStack[keyStack.length - 1];
+      
+      if (Array.isArray(parent.obj)) {
+        // Direct list item - add to current array
+        parent.obj.push(parseValue(item));
+      } else {
+        // List item under a nested object - find the array key
+        // Look for keys that are 'zh' or 'en' with arrays
+        for (const k of Object.keys(parent.obj)) {
+          if (Array.isArray(parent.obj[k])) {
+            parent.obj[k].push(parseValue(item));
+            break;
+          }
+        }
       }
       continue;
-    }
-    
-    const nestedMatch = trimmed.match(/^([a-zA-Z_]+):\s*(.*)$/);
-    if (nestedMatch && currentKey) {
-      const [, nestedKey, value] = nestedMatch;
-      if (!result[currentKey]) result[currentKey] = {};
-      if (typeof result[currentKey] === 'object' && !Array.isArray(result[currentKey])) {
-        result[currentKey][nestedKey] = parseValue(value);
-      }
     }
   }
   
@@ -146,16 +140,43 @@ async function main() {
     const yamlContent = await readFile(gameYamlPath, 'utf-8');
     const game = parseYAML(yamlContent);
     
+    let description = game.description || '';
+    let descriptionZh = game.descriptionZh || '';
+    if (typeof game.description === 'object' && game.description) {
+      description = game.description.en || game.description.zh || '';
+      descriptionZh = game.description.zh || game.description.en || '';
+    }
+    
+    let controls = game.controls || [];
+    if (typeof game.controls === 'object' && game.controls) {
+      // Handle nested controls { zh: [...], en: [...] }
+      controls = game.controls.zh || game.controls.en || [];
+    }
+    
+    const thumbnailPath = game.thumbnail ? 
+      `play/${slug}/${game.thumbnail.replace(/^assets\//, 'assets/')}` : 
+      `play/${slug}/assets/thumbnail.svg`;
+    const iconPath = game.icon ? 
+      `play/${slug}/${game.icon.replace(/^assets\//, 'assets/')}` : 
+      `play/${slug}/assets/icon.svg`;
+    
     games.push({
       slug: game.slug || slug,
       title: game.title || slug,
-      description: game.description || '',
+      titleZh: game.titleZh || slug,
+      description,
+      descriptionZh,
       tags: game.tags || [],
-      controls: game.controls || [],
-      playPath: game.playPath || 'build/index.html',
-      thumbnail: game.thumbnail || `assets/thumbnail.svg`,
-      icon: game.icon || `assets/icon.svg`,
+      controls,
+      category: game.category || 'all',
+      categoryZh: game.categoryZh || game.category || 'all',
+      playPath: game.playPath || `play/${slug}/index.html`,
+      thumbnail: thumbnailPath,
+      icon: iconPath,
       libs: game.libs || {},
+      rating: game.rating ?? 3.5,
+      views: game.views ?? 1000,
+      publishedAt: game.publishedAt || new Date().toISOString(),
     });
   }
   

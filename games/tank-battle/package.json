@@ -1,0 +1,17 @@
+{
+  "name": "tank-battle",
+  "version": "1.0.0",
+  "description": "Tank Battle - Classic 4399 style tank game",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --outfile=build/index.js --define:process.env.NODE_ENV=\\\"production\\\" --format=esm --target=es2015 --minify",
+    "dev": "esbuild src/main.ts --bundle --outfile=build/index.js --define:process.env.NODE_ENV=\\\"development\\\" --format=esm --target=es2015 --sourcemap --watch"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0",
+    "typescript": "^5.0.0"
+  }
+}

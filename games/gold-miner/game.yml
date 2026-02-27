@@ -1,0 +1,14 @@
+slug: gold-miner
+title: Gold Miner
+titleZh: 黄金矿工
+category: Arcade
+categoryZh: 休闲游戏
+description: Swing your hook to collect gold, diamonds and treasures before time runs out
+descriptionZh: 摆动你的钩子收集黄金、钻石和宝藏，时间有限
+tags: [arcade, casual, timing]
+controls: ["Mouse: Aim and shoot hook", "Mouse: Collect items"]
+controlsZh: ["鼠标：瞄准并发射钩子", "鼠标：收集物品"]
+playPath: build/index.html
+thumbnail: assets/thumbnail.png
+icon: assets/icon.png
+image_prompt: A cheerful cartoon miner with red hat swinging on a rope to catch golden nuggets, desert canyon background, vibrant orange and yellow colors, 4399 game icon style, playful and nostalgic

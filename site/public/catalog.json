@@ -1,61 +1,289 @@
 [
   {
+    "slug": "tetris",
+    "title": "# 俄罗斯方块 (Tetris)",
+    "titleZh": "# 俄罗斯方块 (Tetris)",
+    "description": "A game created with the 4399 game creator.",
+    "descriptionZh": "A game created with the 4399 game creator.",
+    "tags": [
+      "vanilla",
+      "classic"
+    ],
+    "controls": "Arrow keys or WASD to control",
+    "category": "Classic",
+    "categoryZh": "经典游戏",
+    "playPath": "/",
+    "thumbnail": "play/tetris/assets/thumbnail.svg",
+    "icon": "play/tetris/assets/icon.svg",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.450Z"
+  },
+  {
+    "slug": "breakout",
+    "title": "breakout",
+    "titleZh": "breakout",
+    "description": "Classic Breakout game, control paddle to break all bricks",
+    "descriptionZh": "经典打砖块游戏，控制挡板击碎所有砖块",
+    "tags": [
+      "classic",
+      "arcade"
+    ],
+    "controls": "移动挡板",
+    "category": "classic",
+    "categoryZh": "classic",
+    "playPath": "play/breakout/index.html",
+    "thumbnail": "play/breakout/assets/thumbnail.png",
+    "icon": "play/breakout/assets/icon.png",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.445Z"
+  },
+  {
+    "slug": "gate-rush",
+    "title": "Gate Rush",
+    "titleZh": "gate 冲刺",
+    "description": "Lead your squad through math gates and defeat zombies in this fast-paced runner",
+    "descriptionZh": "带领你的小队穿过数学门并击败僵尸的快节奏跑酷游戏",
+    "tags": [
+      "action",
+      "runner",
+      "math"
+    ],
+    "controls": [],
+    "category": "Action",
+    "categoryZh": "动作游戏",
+    "playPath": "build/index.html",
+    "thumbnail": "play/gate-rush/assets/thumbnail.svg",
+    "icon": "play/gate-rush/assets/icon.svg",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.446Z"
+  },
+  {
+    "slug": "gold-miner",
+    "title": "Gold Miner",
+    "titleZh": "黄金矿工",
+    "description": "Swing your hook to collect gold, diamonds and treasures before time runs out",
+    "descriptionZh": "摆动你的钩子收集黄金、钻石和宝藏，时间有限",
+    "tags": [
+      "arcade",
+      "casual",
+      "timing"
+    ],
+    "controls": [],
+    "category": "Arcade",
+    "categoryZh": "休闲游戏",
+    "playPath": "build/index.html",
+    "thumbnail": "play/gold-miner/assets/thumbnail.png",
+    "icon": "play/gold-miner/assets/icon.png",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.447Z"
+  },
+  {
     "slug": "hello-cube",
     "title": "Hello Cube",
+    "titleZh": "你好方块",
     "description": "Spinning 3D cube demo with Three.js",
+    "descriptionZh": "使用 Three.js 的 3D 方块演示",
     "tags": [
       "demo",
       "three",
       "3d"
     ],
-    "controls": [
-      "Mouse drag: orbit",
-      "Scroll: zoom"
-    ],
+    "controls": [],
+    "category": "demo",
+    "categoryZh": "演示",
     "playPath": "build/index.html",
-    "thumbnail": "assets/thumbnail.svg",
-    "icon": "assets/icon.svg",
+    "thumbnail": "play/hello-cube/assets/thumbnail.svg",
+    "icon": "play/hello-cube/assets/icon.svg",
     "libs": {
       "three": "0.160.0"
-    }
+    },
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.447Z"
   },
   {
     "slug": "hello-phaser",
     "title": "Hello Phaser",
+    "titleZh": "你好 Phaser",
     "description": "Bouncing ball demo with Phaser 3",
+    "descriptionZh": "Phaser 3 弹球演示",
     "tags": [
       "demo",
       "phaser",
       "2d"
     ],
-    "controls": [
-      "Click: add ball",
-      "Space: reset"
-    ],
+    "controls": [],
+    "category": "demo",
+    "categoryZh": "演示",
     "playPath": "build/index.html",
-    "thumbnail": "assets/thumbnail.svg",
-    "icon": "assets/icon.svg",
+    "thumbnail": "play/hello-phaser/assets/thumbnail.svg",
+    "icon": "play/hello-phaser/assets/icon.svg",
     "libs": {
       "phaser": "3.70.0"
-    }
+    },
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.448Z"
+  },
+  {
+    "slug": "ice-fire-boy",
+    "title": "ice-fire-boy",
+    "titleZh": "ice-fire-boy",
+    "description": "Two-player cooperative game, control ice and fire characters simultaneously",
+    "descriptionZh": "双人合作闯关游戏，需要同时控制冰火两个角色，解谜冒险",
+    "tags": [
+      "双人游戏",
+      "合作",
+      "平台跳跃",
+      "解谜"
+    ],
+    "controls": [],
+    "category": "puzzle",
+    "categoryZh": "puzzle",
+    "playPath": "play/ice-fire-boy/index.html",
+    "thumbnail": "play/ice-fire-boy/assets/thumbnail.svg",
+    "icon": "play/ice-fire-boy/null",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.448Z"
+  },
+  {
+    "slug": "memory-match",
+    "title": "memory-match",
+    "titleZh": "memory-match",
+    "description": "Memory matching game, find all matching cards",
+    "descriptionZh": "记忆配对游戏，找出所有匹配的卡片",
+    "tags": [
+      "puzzle",
+      "memory"
+    ],
+    "controls": "选择卡片",
+    "category": "puzzle",
+    "categoryZh": "puzzle",
+    "playPath": "play/memory-match/index.html",
+    "thumbnail": "play/memory-match/assets/thumbnail.png",
+    "icon": "play/memory-match/assets/icon.png",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.449Z"
+  },
+  {
+    "slug": "pacman",
+    "title": "pacman",
+    "titleZh": "pacman",
+    "description": "Classic Pacman game, collect dots and avoid ghosts",
+    "descriptionZh": "经典吃豆人游戏，收集豆子躲避幽灵",
+    "tags": [
+      "classic",
+      "arcade"
+    ],
+    "controls": "移动",
+    "category": "classic",
+    "categoryZh": "classic",
+    "playPath": "play/pacman/index.html",
+    "thumbnail": "play/pacman/assets/thumbnail.png",
+    "icon": "play/pacman/assets/icon.png",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.449Z"
+  },
+  {
+    "slug": "sky-dominator",
+    "title": "Sky Dominator",
+    "titleZh": "苍穹战机",
+    "description": "3D aerial combat game! Pilot your fighter through vast skies, defeat enemies, collect power-ups, and dominate the heavens. Smooth 3D maneuvers, diverse enemies, exciting battles.",
+    "descriptionZh": "3D 空战射击游戏！操控战机在广阔天空中战斗，击败敌人，收集能量，成为苍穹霸主。流畅的三维机动，多样化的敌人，刺激的战斗体验。",
+    "tags": [],
+    "controls": [
+      "WASD / 方向键：前后左右移动",
+      "Shift：加速",
+      "鼠标：瞄准",
+      "空格：射击",
+      "ESC：暂停"
+    ],
+    "category": "Action",
+    "categoryZh": "Action",
+    "playPath": "play/sky-dominator/index.html",
+    "thumbnail": "play/sky-dominator/assets/thumbnail.svg",
+    "icon": "play/sky-dominator/assets/icon.svg",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.449Z"
   },
   {
     "slug": "snake",
     "title": "Snake",
+    "titleZh": "贪吃蛇",
     "description": "Classic snake game - eat food, grow longer, avoid walls and yourself",
+    "descriptionZh": "经典贪吃蛇游戏 - 吃食物，变长，避免撞墙或撞到自己",
     "tags": [
       "classic",
-      "arcade",
-      "phaser"
+      "arcade"
     ],
-    "controls": [
-      "Arrow keys: Move snake"
-    ],
+    "controls": [],
+    "category": "Classic",
+    "categoryZh": "经典游戏",
     "playPath": "build/index.html",
-    "thumbnail": "assets/thumbnail.svg",
-    "icon": "assets/icon.svg",
-    "libs": {
-      "phaser": "3.70.0"
-    }
+    "thumbnail": "play/snake/assets/thumbnail.svg",
+    "icon": "play/snake/assets/icon.svg",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.449Z"
+  },
+  {
+    "slug": "snake2",
+    "title": "Snake 2",
+    "titleZh": "贪吃蛇 2",
+    "description": "A game created with the 4399 game creator.",
+    "descriptionZh": "A game created with the 4399 game creator.",
+    "tags": [
+      "vanilla",
+      "classic"
+    ],
+    "controls": "Arrow keys or WASD to control",
+    "category": "Classic",
+    "categoryZh": "经典游戏",
+    "playPath": "/",
+    "thumbnail": "play/snake2/assets/thumbnail.svg",
+    "icon": "play/snake2/assets/icon.svg",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.450Z"
+  },
+  {
+    "slug": "tank-battle",
+    "title": "Tank Battle",
+    "titleZh": "坦克大战",
+    "description": "Control your tank, destroy enemy tanks and protect your base in this classic battle game",
+    "descriptionZh": "控制你的坦克，摧毁敌方坦克，保护基地，经典对战游戏",
+    "tags": [
+      "action",
+      "strategy",
+      "multiplayer"
+    ],
+    "controls": [],
+    "category": "Action",
+    "categoryZh": "动作游戏",
+    "playPath": "build/index.html",
+    "thumbnail": "play/tank-battle/assets/thumbnail.png",
+    "icon": "play/tank-battle/assets/icon.png",
+    "libs": {},
+    "rating": 3.5,
+    "views": 1000,
+    "publishedAt": "2026-02-27T14:54:42.450Z"
   }
 ]

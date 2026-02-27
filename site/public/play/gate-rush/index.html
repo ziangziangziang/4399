@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gate Rush -  gate 冲刺</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #1a1a2e; 
+      overflow: hidden; 
+      font-family: 'Arial', sans-serif;
+    }
+    #game-container { 
+      width: 100vw; 
+      height: 100vh; 
+      position: relative;
+    }
+    canvas { display: block; }
+    #hud {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      font-size: 14px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      z-index: 100;
+      line-height: 1.6;
+    }
+    #controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+      z-index: 100;
+    }
+    .btn {
+      background: #4CAF50;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      margin: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .btn:hover { background: #45a049; }
+    .btn.active { background: #2196F3; }
+    #game-over {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0,0,0,0.9);
+      color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+      z-index: 200;
+    }
+    #game-over h2 { margin-bottom: 20px; font-size: 32px; }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="hud">
+      <div>🧍 士兵：<span id="soldier-count">10</span></div>
+      <div>📏 距离：<span id="distance">0</span>m</div>
+      <div>⭐ 分数：<span id="score">0</span></div>
+      <div>🎲 种子：<span id="seed">0</span></div>
+    </div>
+    <div id="controls">
+      <button class="btn" id="btn-restart">🔄 重新开始</button>
+      <button class="btn" id="btn-bot">🤖 机器人：<span id="bot-name">手动</span></button>
+      <div style="margin-top: 10px;">A/D 或 ←/→ 左右移动</div>
+    </div>
+    <div id="game-over">
+      <h2 id="game-over-title">游戏结束</h2>
+      <p id="game-over-score">最终分数：0</p>
+      <button class="btn" id="btn-restart-over">🔄 重新开始</button>
+    </div>
+  </div>
+  <script type="module" src="../src/main.ts"></script>
+</body>
+</html>
