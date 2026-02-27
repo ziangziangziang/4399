@@ -1,2 +1,5 @@
 node_modules/
 site/dist/
+site/public/play/
+site/public/catalog.json
+**/image-*.png

@@ -500,7 +500,7 @@ a:hover {
 
 .game-play-frame {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 600px;
   border: none;
   display: block;
 }

@@ -12,6 +12,7 @@ const SITE_PLAY_DIR = join(ROOT_DIR, 'site', 'public', 'play');
 async function copyDirectory(srcDir, destDir) {
   try {
     const entries = await readdir(srcDir, { withFileTypes: true });
+    console.log(`    Reading ${srcDir}: ${entries.map(e => e.name).join(', ')}`);
     for (const entry of entries) {
       const srcPath = join(srcDir, entry.name);
       const destPath = join(destDir, entry.name);
@@ -23,6 +24,7 @@ async function copyDirectory(srcDir, destDir) {
       }
     }
   } catch (err) {
+    console.log(`    Error copying from ${srcDir}: ${err.message}`);
     // Directory doesn't exist, that's ok
   }
 }
@@ -58,7 +60,8 @@ async function main() {
     // Copy assets if they exist
     try {
       await readdir(assetsDir);
-      await copyDirectory(assetsDir, playDir);
+      await mkdir(join(playDir, 'assets'), { recursive: true });
+      await copyDirectory(assetsDir, join(playDir, 'assets'));
       console.log(`    Copied assets`);
     } catch {
       // No assets directory, that's ok
