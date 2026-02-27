@@ -6,14 +6,27 @@ if (!app) {
   throw new Error('App container not found');
 }
 
-// Simple router
-const routes: { [path: string]: () => void } = {
-  '/': () => renderGameList(app),
-};
+const baseUrl = (import.meta as any).env.BASE_URL;
+
+function getBaseUrlPath(): string {
+  return baseUrl.startsWith('/') ? baseUrl : '/';
+}
+
+function getHomePath(): string {
+  const base = getBaseUrlPath();
+  return base.endsWith('/') ? base : base + '/';
+}
 
 function getGameSlugFromPath(path: string): string | null {
-  const match = path.match(/^\/play\/([^/]+)/);
+  const base = getBaseUrlPath();
+  const gamePath = base + 'play/';
+  const match = path.match(new RegExp(`^${gamePath}([^/]+)`));
   return match ? match[1] : null;
+}
+
+function isHomePage(path: string): boolean {
+  const base = getBaseUrlPath();
+  return path === base || path === base + 'index.html';
 }
 
 function router() {
@@ -21,12 +34,16 @@ function router() {
   
   const gameSlug = getGameSlugFromPath(path);
   if (gameSlug) {
-    renderGameDetail(app, gameSlug);
+    if (app) renderGameDetail(app, gameSlug);
     return;
   }
   
-  const routeFn = routes[path] || routes['/'];
-  routeFn();
+  if (isHomePage(path)) {
+    if (app) renderGameList(app);
+    return;
+  }
+  
+  if (app) renderGameList(app);
 }
 
 window.addEventListener('hashchange', router);

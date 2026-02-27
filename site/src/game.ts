@@ -15,10 +15,12 @@ export interface Game {
 
 let catalog: Game[] = [];
 
+const baseUrl = (import.meta as any).env.BASE_URL;
+
 async function loadCatalog(): Promise<Game[]> {
   if (catalog.length > 0) return catalog;
   
-  const response = await fetch('/catalog.json');
+  const response = await fetch(baseUrl + 'catalog.json');
   catalog = await response.json();
   return catalog;
 }
@@ -50,7 +52,7 @@ export async function renderGameList(container: HTMLElement) {
     btn.addEventListener('click', (e) => {
       const slug = (e.target as HTMLElement).dataset.slug;
       if (slug) {
-        window.history.pushState({}, '', `/play/${slug}`);
+        window.history.pushState({}, '', baseUrl + 'play/' + slug);
         router();
       }
     });
@@ -60,7 +62,7 @@ export async function renderGameList(container: HTMLElement) {
     card.addEventListener('click', (e) => {
       const slug = (e.target as HTMLElement).dataset.slug;
       if (slug) {
-        window.history.pushState({}, '', `/play/${slug}`);
+        window.history.pushState({}, '', baseUrl + 'play/' + slug);
         router();
       }
     });
@@ -75,7 +77,7 @@ export async function renderGameDetail(container: HTMLElement, slug: string) {
     container.innerHTML = `
       <main class="game-detail">
         <h1>Game not found</h1>
-        <p><a href="/">Return home</a></p>
+        <p><a href="${baseUrl}">Return home</a></p>
       </main>
     `;
     return;
@@ -83,7 +85,7 @@ export async function renderGameDetail(container: HTMLElement, slug: string) {
   
   container.innerHTML = `
     <header class="header">
-      <a href="/" class="back-link">← Back to games</a>
+      <a href="${baseUrl}" class="back-link">← Back to games</a>
       <h1>${game.title}</h1>
     </header>
     <main class="game-detail">
@@ -94,7 +96,7 @@ export async function renderGameDetail(container: HTMLElement, slug: string) {
         </div>
       </div>
       <div class="game-play">
-        <iframe src="/${game.playPath}" class="game-frame" frameborder="0" allowfullscreen></iframe>
+        <iframe src="${baseUrl}${game.playPath}" class="game-frame" frameborder="0" allowfullscreen></iframe>
       </div>
       <section class="game-info">
         <h2>About</h2>
