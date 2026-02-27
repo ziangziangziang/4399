@@ -9,9 +9,6 @@ export interface Game {
   tags: string[];
   category: string;
   categoryZh: string;
-  rating: number;
-  views: number;
-  publishedAt: string;
 }
 
 let currentGame: Game | null = null;
@@ -46,11 +43,6 @@ function renderGamePage(container: HTMLElement, game: Game): void {
         <div class="game-info">
           <h1 class="game-title">${game.title}</h1>
           <p class="game-desc">${game.description}</p>
-          <div class="game-meta">
-            <span class="game-category">${category}</span>
-            <span class="game-rating">★ ${game.rating.toFixed(1)}</span>
-            <span class="game-views">${game.views} ${t('game.views')}</span>
-          </div>
           <div class="game-tags">
             ${game.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
           </div>
@@ -91,7 +83,6 @@ function renderRecommendations(container: HTMLElement, currentSlug: string): voi
         <img src="${game.thumbnail}" alt="${game.title}" loading="lazy">
         <div class="recommend-info">
           <h3>${game.title}</h3>
-          <p>★ ${game.rating.toFixed(1)}</p>
         </div>
       </a>
     `).join('');
